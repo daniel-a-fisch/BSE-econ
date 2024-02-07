@@ -6,6 +6,7 @@
 #  In this script I analyse the small world phenomenon in the Facebook100 data set.
 #  I do this by comparing diameter and mean distances within the network as of
 #  2005 for different universities.
+#  As of 07.02.2024, the data can be found here: https://networkrepository.com/socfb.php
 
 
 #install.packages("igraph")
@@ -29,7 +30,7 @@ mean_distances <- numeric(length(mat_files))
 net_size <- numeric(length(mat_files))
 GC_size <- numeric(length(mat_files))
 
-# Insert loop later
+# For all university files
 for (i in seq_along(mat_files)) {
 
 # Read in data
@@ -52,7 +53,6 @@ components <- components(graph)
 # Create subgraph of the larges
 largest_component_index <- which.max(components$csize)
 GC = induced_subgraph(graph, which(components$membership == largest_component_index))
-
 
 # Compute the diameter and mean distance of the largest connected component
 diameters[i] <- diameter(GC)
