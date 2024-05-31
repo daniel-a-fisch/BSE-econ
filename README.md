@@ -1,2 +1,2 @@
 # BSE-econ
-Repository with some codes from my Master's at BSE. 
+Repository with a few codes that I wrote myself doing my master's degree at BSE. 
